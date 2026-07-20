@@ -2,35 +2,15 @@ const fs = require("fs");
 const path = require("path");
 
 module.exports = (req, res) => {
+  const { personaje } = req.query;
 
-    const { personaje } = req.query;
+  const carpeta = path.join(process.cwd(), "public", personaje, "firma");
 
-    const carpeta = path.join(
-        process.cwd(),
-        "public",
-        personaje,
-        "firma"
-    );
-
-    if (!fs.existsSync(carpeta)) {
-        return res.status(404).send("Personaje no encontrado");
-    }
-
-    const imagenes = fs.readdirSync(carpeta)
-        .filter(f => /\.(png|jpg|jpeg|gif|webp)$/i.test(f));
-
-    if (!imagenes.length) {
-        return res.status(404).send("No hay imágenes");
-    }
-
-    const imagen = imagenes[
-        Math.floor(Math.random() * imagenes.length)
-    ];
-
-    res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
-    res.setHeader("Pragma", "no-cache");
-    res.setHeader("Expires", "0");
-
-    res.redirect(307, `/${personaje}/firma/${imagen}?t=${Date.now()}`);
-
+  res.status(200).json({
+    personaje,
+    cwd: process.cwd(),
+    carpeta,
+    existe: fs.existsSync(carpeta),
+    query: req.query
+  });
 };
