@@ -1,5 +1,10 @@
 export default {
   async fetch(request) {
-    return new Response("Hola desde Cloudflare");
+
+    return Response.redirect(
+      "https://rotativas.vercel.app/Deja/avatar/AvatarDeja.png",
+      302
+    );
+
   }
 }
