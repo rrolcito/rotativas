@@ -8,7 +8,7 @@ export default function handler(req, res) {
     return res.status(404).send("Personaje no encontrado");
   }
 
-  const lista = imagenes[personaje].avatar;
+  const lista = obtenerImagenes(personaje, "avatar");
 
   if (lista.length === 0) {
     return res.status(404).send("No hay avatares");
