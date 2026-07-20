@@ -2,7 +2,7 @@ import imagenes from "../generated/imagenes.json";
 
 export default {
 
-  async fetch(request) {
+  async fetch(request, env) {
 
     const url = new URL(request.url);
 
