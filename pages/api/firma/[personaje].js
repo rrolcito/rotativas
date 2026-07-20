@@ -1,4 +1,4 @@
-import { imagenes } from "../../../config/imagenes";
+import { imagenes } from "../../../lib/imagenes";
 
 export default function handler(req, res) {
 
@@ -8,7 +8,7 @@ export default function handler(req, res) {
     return res.status(404).send("Personaje no encontrado");
   }
 
-  const lista = imagenes[personaje].firma;
+  const lista = obtenerImagenes(personaje, "firma");
 
   if (lista.length === 0) {
     return res.status(404).send("No hay firmas");
