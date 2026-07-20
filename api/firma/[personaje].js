@@ -6,7 +6,7 @@ module.exports = (req, res) => {
 
   const carpeta = path.join(
     process.cwd(),
-    "public",
+    "pjs",
     personaje,
     "firma"
   );
