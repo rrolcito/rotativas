@@ -22,7 +22,7 @@ export const imagenes = {
     firma: []
   },
 
-  "Déjà": {
+  Deja: {
     avatar: [],
     firma: []
   },
