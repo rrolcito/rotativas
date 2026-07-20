@@ -1,3 +1,4 @@
+import { imagenes } from "../../../config/imagenes";
 import { elegirImagen } from "../../../lib/randomImage";
 
 export default function handler(req, res) {
