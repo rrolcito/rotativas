@@ -2,7 +2,7 @@
   "name": "rotativas",
   "private": true,
   "scripts": {
-    "generate": "node scripts/generarImagenes.cjs",
+    "generate": "node scripts/generar.cjs",
     "dev": "next dev",
     "build": "npm run generate && next build",
   },
