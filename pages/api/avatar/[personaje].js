@@ -1,4 +1,4 @@
-import { imagenes } from "../../../config/imagenes";
+import { imagenes } from "../../../lib/imagenes";
 
 export default function handler(req, res) {
 
