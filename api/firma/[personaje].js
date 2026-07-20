@@ -2,26 +2,35 @@ const fs = require("fs");
 const path = require("path");
 
 module.exports = (req, res) => {
-  const { personaje } = req.query;
 
-  const carpeta = path.join(
-    process.cwd(),
-    "public",
-    personaje,
-    "firma"
-  );
+    const { personaje } = req.query;
 
-  if (!fs.existsSync(carpeta)) {
-    return res.status(404).send("Personaje no encontrado");
-  }
+    const carpeta = path.join(
+        process.cwd(),
+        "public",
+        personaje,
+        "firma"
+    );
 
-  const imagenes = fs.readdirSync(carpeta);
+    if (!fs.existsSync(carpeta)) {
+        return res.status(404).send("Personaje no encontrado");
+    }
 
-  if (imagenes.length === 0) {
-    return res.status(404).send("No hay imágenes");
-  }
+    const imagenes = fs.readdirSync(carpeta)
+        .filter(f => /\.(png|jpg|jpeg|gif|webp)$/i.test(f));
 
-  const imagen = imagenes[Math.floor(Math.random() * imagenes.length)];
+    if (!imagenes.length) {
+        return res.status(404).send("No hay imágenes");
+    }
 
-  res.redirect(`/${personaje}/firma/${imagen}`);
+    const imagen = imagenes[
+        Math.floor(Math.random() * imagenes.length)
+    ];
+
+    res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+    res.setHeader("Pragma", "no-cache");
+    res.setHeader("Expires", "0");
+
+    res.redirect(307, `/${personaje}/firma/${imagen}?t=${Date.now()}`);
+
 };
