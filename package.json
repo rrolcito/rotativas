@@ -2,8 +2,9 @@
   "name": "rotativas",
   "private": true,
   "scripts": {
+    "generate": "node scripts/generarImagenes.cjs",
     "dev": "next dev",
-    "build": "node scripts/generarConfig.cjs && next build"
+    "build": "npm run generate && next build",
   },
   "dependencies": {
     "next": "^15.3.5",
