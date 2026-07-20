@@ -1,10 +1,16 @@
 export default {
-  async fetch(request) {
+  async fetch() {
 
-    return Response.redirect(
-      "https://rotativas.vercel.app/Deja/avatar/AvatarDeja.png",
-      302
+    const respuesta = await fetch(
+      "https://rotativas.vercel.app/Deja/avatar/AvatarDeja.png"
     );
+
+    return new Response(respuesta.body, {
+      headers: {
+        "Content-Type": "image/png",
+        "Cache-Control": "no-cache"
+      }
+    });
 
   }
 }
