@@ -1,4 +1,4 @@
-import { imagenes } from "../../../config/imagenes";
+import { imagenes } from "../../../lib/imagenes";
 
 export default function handler(req, res) {
 
@@ -14,7 +14,7 @@ export default function handler(req, res) {
     return res.status(404).send("No hay firmas");
   }
 
-  const imagen = lista[Math.floor(Math.random() * lista.length)];
+  const imagen = elegirImagen(personaje, "firma", lista);
 
   res.setHeader(
     "Cache-Control",
