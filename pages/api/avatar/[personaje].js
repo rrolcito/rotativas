@@ -1,4 +1,4 @@
-import { imagenes } from "../../../lib/imagenes";
+import { imagenes } from "../../../config/imagenes";
 
 export default function handler(req, res) {
 
@@ -8,7 +8,7 @@ export default function handler(req, res) {
     return res.status(404).send("Personaje no encontrado");
   }
 
-  const lista = obtenerImagenes(personaje, "avatar");
+  const lista = imagenes[personaje].avatar;
 
   if (lista.length === 0) {
     return res.status(404).send("No hay avatares");
