@@ -1,26 +1,3 @@
 {
-  "rewrites": [
-    { "source": "/maddie-avatar.png", "destination": "/api/random?ruta=Maddie/avatar&total=2&ext=png" },
-    { "source": "/maddie-firma.png", "destination": "/api/random?ruta=Maddie/firma&total=2&ext=png" },
-    { "source": "/roxanne-avatar.png", "destination": "/api/random?ruta=Roxanne/avatar&total=2&ext=png" },
-    { "source": "/roxanne-firma.png", "destination": "/api/random?ruta=Roxanne/firma&total=2&ext=png" },
-    { "source": "/kaori-avatar.png", "destination": "/api/random?ruta=Kaori/avatar&total=3&ext=png" },
-    { "source": "/kaori-firma.png", "destination": "/api/random?ruta=Kaori/firma&total=2&ext=png" },
-    { "source": "/sophie-avatar.png", "destination": "/api/random?ruta=Sophie/avatar&total=2&ext=png" },
-    { "source": "/sophie-firma.png", "destination": "/api/random?ruta=Sophie/firma&total=2&ext=png" },
-    { "source": "/deja-avatar.png", "destination": "/api/random?ruta=Déjà/avatar&total=3&ext=png" },
-    { "source": "/deja-firma.png", "destination": "/api/random?ruta=Déjà/firma&total=3&ext=png" },
-    { "source": "/lily-avatar.png", "destination": "/api/random?ruta=Lily/avatar&total=2&ext=png" },
-    { "source": "/lily-firma.png", "destination": "/api/random?ruta=Lily/firma&total=2&ext=png" },
-    { "source": "/noor-avatar.png", "destination": "/api/random?ruta=Noor/avatar&total=2&ext=png" },
-    { "source": "/noor-firma.png", "destination": "/api/random?ruta=Noor/firma&total=2&ext=png" },
-    { "source": "/eilin-avatar.png", "destination": "/api/random?ruta=Eilin/avatar&total=2&ext=png" },
-    { "source": "/eilin-firma.png", "destination": "/api/random?ruta=Eilin/firma&total=2&ext=png" },
-    { "source": "/narcissa-avatar.png", "destination": "/api/random?ruta=Narcissa/avatar&total=2&ext=png" },
-    { "source": "/narcissa-firma.png", "destination": "/api/random?ruta=Narcissa/firma&total=2&ext=png" },
-    { "source": "/persephone-avatar.png", "destination": "/api/random?ruta=Persephone/avatar&total=2&ext=png" },
-    { "source": "/persephone-firma.png", "destination": "/api/random?ruta=Persephone/firma&total=2&ext=png" },
-    { "source": "/jackie-avatar.png", "destination": "/api/random?ruta=Jackie/avatar&total=2&ext=png" },
-    { "source": "/jackie-firma.png", "destination": "/api/random?ruta=Jackie/firma&total=2&ext=png" }
-  ]
+  "cleanUrls": true
 }
